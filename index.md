@@ -35,7 +35,7 @@ Professional event coverage from a corporate gala featuring group portraits, can
 
 📧 **Email:** [your email]  
 📱 **Phone:** [your phone]  
-📷 **Instagram:** [@vsphotographs](https://instagram.com/vsphotographs)
+📷 **Instagram:** [@vsphotographs](https://www.instagram.com/vsfotographs?utm_source=qr&igsh=OTk0YzhjMDVlZA==)
 
 Based in Modesto, CA | Available for local bookings
 
