@@ -120,17 +120,6 @@
       padding: 80px 20px;
       border-top: 1px solid #1a1a1a;
     }
-
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.97);
-      z-index: 2000;
-      align-items: center;
-      justify-content: center;
-    }
-    .lightbox img { max-width: 90%; max-height: 90vh; border-radius: 12px; }
   </style>
 </head>
 <body>
@@ -153,8 +142,8 @@
 
   <section id="about" class="about">
     <h2>About Me</h2>
-    <p>I'm Vincent, a passionate photographer specializing in portraits, group celebrations, and meaningful events. With a cinematic eye, I capture raw emotion, connection, and the beauty in every moment.</p>
-    <p style="margin-top:30px;">Based in the Bay Area • Available for commissions worldwide.</p>
+    <p>I'm Vincent, a Central Valley photographer based in Modesto. I specialize in portraits, group celebrations, and meaningful events. With a cinematic eye, I capture raw emotion, connection, and the beauty in every moment — from graduation ceremonies to intimate family sessions.</p>
+    <p style="margin-top:30px;">Proudly serving Modesto, the Central Valley, and beyond.</p>
   </section>
 
   <section id="gallery">
@@ -167,14 +156,14 @@
     </div>
 
     <div class="gallery" id="photo-gallery">
-      <!-- Your photos will go here -->
+      <!-- Photos go here -->
     </div>
   </section>
 
   <footer>
     <p style="font-size:1.4rem;">Let's create timeless images together.</p>
     <p><a href="https://instagram.com/vsfotographs" target="_blank" style="color:var(--accent);">Follow on Instagram @vsfotographs</a></p>
-    <p style="margin-top:40px; opacity:0.5;">© 2026 V.S. Photographs</p>
+    <p style="margin-top:40px; opacity:0.5;">© 2026 V.S. Photographs • Modesto, California</p>
   </footer>
 
   <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
@@ -188,14 +177,8 @@
     }
 
     function filterCategory(cat) {
-      // Simple version - can be expanded later
-      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-      // For now just alert - we can add real filtering later
-      alert("Filtering by " + cat + " (coming soon - full version)");
+      alert("Category filtering coming in next update — for now enjoy the full gallery!");
     }
-
-    // Add your photos here later
   </script>
 </body>
 </html>
