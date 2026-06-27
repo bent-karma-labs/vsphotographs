@@ -3,171 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V.S. Photographs — Portfolio</title>
+  <title>V.S. Photographs — Cinematic Portfolio</title>
   <style>
     :root {
-      --bg: #0a0a0a;
-      --text: #e5e5e5;
-      --accent: #d4af88;
+      --bg: #050505;
+      --text: #ddd;
+      --accent: #b38a5f;
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
     }
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(10,10,10,0.95);
-      padding: 18px 5%;
+      background: rgba(5,5,5,0.95);
+      padding: 20px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
       backdrop-filter: blur(12px);
     }
-    .logo { font-size: 1.9rem; font-weight: bold; color: var(--accent); letter-spacing: 4px; }
+    .logo { font-size: 2rem; font-weight: bold; color: var(--accent); letter-spacing: 6px; }
 
-    header {
+    .hero {
       height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('https://ibb.co/TDNGCXq3') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.85)), url('https://i.postimg.cc/1zgNNnmd/Dr-Bhagat3.jpg') center/cover;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      position: relative;
     }
-    .hero h1 {
-      font-size: 5.2rem;
-      letter-spacing: 12px;
-      margin-bottom: 10px;
+    .hero-content h1 {
+      font-size: 5.5rem;
+      letter-spacing: 15px;
+      margin-bottom: 15px;
+      color: white;
     }
-    .hero p {
+    .hero-content p {
       font-size: 1.6rem;
       color: var(--accent);
-      letter-spacing: 6px;
+      letter-spacing: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    section {
+      padding: 120px 8%;
+    }
+    h2 {
+      font-size: 2.8rem;
+      margin-bottom: 60px;
+      text-align: center;
+      color: var(--accent);
+    }
+
+    .about {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .filters {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .filter-btn {
+      background: none;
+      border: 1px solid #444;
+      color: white;
+      padding: 10px 25px;
+      margin: 0 8px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--accent);
+      color: black;
+      border-color: var(--accent);
     }
 
     .gallery {
-      padding: 100px 5% 80px;
-      column-count: 3;
-      column-gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
     }
     .gallery img {
       width: 100%;
-      margin-bottom: 20px;
       border-radius: 8px;
-      transition: 0.4s ease;
+      transition: all 0.5s ease;
       cursor: pointer;
     }
     .gallery img:hover {
-      transform: scale(1.04);
-      opacity: 0.92;
+      transform: scale(1.06);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
     }
 
     footer {
       text-align: center;
-      padding: 80px 20px 50px;
-      border-top: 1px solid #222;
-    }
-    .social a {
-      color: var(--accent);
-      font-size: 1.5rem;
-      margin: 0 20px;
-      text-decoration: none;
+      padding: 80px 20px;
+      border-top: 1px solid #1a1a1a;
     }
 
     .lightbox {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.98);
+      background: rgba(0,0,0,0.97);
       z-index: 2000;
       align-items: center;
       justify-content: center;
     }
-    .lightbox img { 
-      max-width: 92%; 
-      max-height: 92vh; 
-      border-radius: 12px;
-    }
-
-    @media (max-width: 900px) {
-      .gallery { column-count: 2; }
-      .hero h1 { font-size: 3.6rem; }
-    }
+    .lightbox img { max-width: 90%; max-height: 90vh; border-radius: 12px; }
   </style>
 </head>
 <body>
 
   <nav>
-    <div class="logo">V.S. PHOTOGRAPHS</div>
-    <div>
-      <a href="#gallery" style="color:white; margin:0 20px; text-decoration:none;">Portfolio</a>
-      <a href="https://instagram.com/vsfotographs" target="_blank" style="color:white; margin:0 20px; text-decoration:none;">Instagram</a>
+    <div class="logo">V.S.</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#gallery">Portfolio</a>
+      <a href="https://instagram.com/vsfotographs" target="_blank">Instagram</a>
     </div>
   </nav>
 
   <header class="hero">
-    <div>
-      <h1>V.S.</h1>
-      <p>PROFESSIONAL PORTRAIT & EVENT PHOTOGRAPHY</p>
+    <div class="hero-content">
+      <h1>V.S. PHOTOGRAPHS</h1>
+      <p>CINEMATIC PORTRAIT & EVENT STORYTELLING</p>
     </div>
   </header>
 
-  <section id="gallery" class="gallery">
-    <img src="https://ibb.co/TDNGCXq3" alt="Group" onclick="openLightbox(this)">
-    <img src="https://ibb.co/394G9xWb" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/Z9nTWjz" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/Xf7Y0r8q" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/2751pHtP" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/Q7WTg0sx" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/Q39nxKDn" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/1YBJdkkj" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/whzTr85b" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/F4VG3ZfH" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/7JHpCTk5" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/ZprfHB09" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/6RBbv6qG" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/5gDjTMRj" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/GvDSzDj4" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/xSHB8L4z" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/v6zbMpPj" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/Q7PsDQJp" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/MkbrXcNf" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/Kcc3BwPB" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/8DYc7Scx" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/xtKBGQFx" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/TBcMFVrp" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/60Wnm3G6" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/YB06Pd8b" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/SHfxgyb" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/jvSrR2CC" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/C3K4Cqf9" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/sd4jFFKK" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/Sw4tSrrs" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/WWjfk7vc" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/5gm1jCLD" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/Y7wdm4Gs" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/ZzPnvV0n" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/0VnckCw4" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/J0n6SkP" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/v4ybFcsY" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/wNY0yvxw" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/zTB5MCYx" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/S4N2N0nd" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/60ZLqqky" alt="Portrait" onclick="openLightbox(this)">
-    <img src="https://ibb.co/WW0DJLND" alt="Portrait" onclick="openLightbox(this)">
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I'm Vincent, a passionate photographer specializing in portraits, group celebrations, and meaningful events. With a cinematic eye, I capture raw emotion, connection, and the beauty in every moment.</p>
+    <p style="margin-top:30px;">Based in the Bay Area • Available for commissions worldwide.</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Portfolio</h2>
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterCategory('all')">All</button>
+      <button class="filter-btn" onclick="filterCategory('portrait')">Portraits</button>
+      <button class="filter-btn" onclick="filterCategory('group')">Groups & Graduates</button>
+      <button class="filter-btn" onclick="filterCategory('event')">Events</button>
+    </div>
+
+    <div class="gallery" id="photo-gallery">
+      <!-- Your photos will go here -->
+    </div>
   </section>
 
   <footer>
-    <p style="font-size:1.5rem; margin-bottom:25px;">Available for bookings • Prints • Collaborations</p>
-    <div class="social">
-      <a href="https://instagram.com/vsfotographs" target="_blank">Instagram</a>
-    </div>
-    <p style="margin-top:50px; opacity:0.5;">© 2026 V.S. Photographs • All Rights Reserved</p>
+    <p style="font-size:1.4rem;">Let's create timeless images together.</p>
+    <p><a href="https://instagram.com/vsfotographs" target="_blank" style="color:var(--accent);">Follow on Instagram @vsfotographs</a></p>
+    <p style="margin-top:40px; opacity:0.5;">© 2026 V.S. Photographs</p>
   </footer>
 
   <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
@@ -179,6 +186,16 @@
       document.getElementById('lightbox-img').src = img.src;
       document.getElementById('lightbox').style.display = 'flex';
     }
+
+    function filterCategory(cat) {
+      // Simple version - can be expanded later
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      // For now just alert - we can add real filtering later
+      alert("Filtering by " + cat + " (coming soon - full version)");
+    }
+
+    // Add your photos here later
   </script>
 </body>
 </html>
