@@ -128,7 +128,9 @@
             background-size: cover;
             background-position: center;
             z-index: 1;
-            opacity: 0.15;
+            opacity: 0.25;
+            filter: blur(3px);
+            background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><g stroke=%22%23FFD700%22 stroke-width=%221.5%22 fill=%22none%22><rect x=%2250%22 y=%2260%22 width=%22100%22 height=%2270%22 rx=%225%22/><circle cx=%22100%22 cy=%2295%22 r=%2225%22/><rect x=%2265%22 y=%2245%22 width=%2270%22 height=%2220%22/><rect x=%2275%22 y=%22140%22 width=%2250%22 height=%228%22/><circle cx=%2265%22 cy=%2275%22 r=%226%22/><circle cx=%22135%22 cy=%2275%22 r=%226%22/></g></svg>') !important;
         }
 
         .section-content {
@@ -231,6 +233,10 @@
         .services-list span {
             color: #FFD700;
             font-weight: bold;
+        }
+
+        .services-list li span:last-child {
+            filter: blur(6px);
         }
 
         /* CONTACT SECTION */
@@ -352,8 +358,8 @@
         <div style="font-size: 1rem; letter-spacing: 2px; color: #FFD700; text-transform: uppercase; font-weight: bold;">
             📷 SHOOTING IN PROGRESS 📷
         </div>
-        <div style="font-size: 0.9rem; letter-spacing: 3px; color: #fff; text-transform: uppercase; margin-top: 5px;">
-            Still Building Our Collection
+        <div style="font-size: 0.9rem; letter-spacing: 2px; color: #fff; text-transform: uppercase; margin-top: 5px; font-style: italic;">
+            In Production | Your Story Awaits
         </div>
     </div>
 
@@ -370,7 +376,6 @@
 
     <!-- PORTFOLIO -->
     <section class="section" id="portfolio">
-        <div class="parallax-bg" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22none%22 stroke=%22%23FFD700%22 stroke-width=%220.5%22/></svg>');"></div>
         <div class="section-content fade-in-on-scroll">
             <h2>Portfolio</h2>
             <div class="portfolio-grid">
@@ -395,14 +400,13 @@
 
     <!-- ABOUT -->
     <section class="section about">
-        <div class="parallax-bg" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect x=%2220%22 y=%2220%22 width=%2260%22 height=%2260%22 fill=%22none%22 stroke=%22%23FFD700%22 stroke-width=%220.5%22/></svg>');"></div>
         <div class="section-content fade-in-on-scroll">
             <h2>About</h2>
             <div class="about-content">
                 <div class="about-text">
                     <h3>Professional Photography</h3>
-                    <p>VS Photographs specializes in capturing high-quality event and portrait photography for Modesto's families, businesses, and celebrations.</p>
-                    <p>We deliver polished, professionally-edited digital files with a focus on natural light, composition, and authentic moments.</p>
+                    <p>I specialize in capturing high-quality event and portrait photography for Modesto's families, businesses, and celebrations.</p>
+                    <p>I deliver polished, professionally-edited digital files with a focus on natural light, composition, and authentic moments.</p>
                 </div>
                 <div>
                     <h3 style="color: #FFD700; margin-bottom: 30px;">Services & Pricing</h3>
@@ -435,7 +439,6 @@
 
     <!-- CONTACT -->
     <section class="section contact">
-        <div class="parallax-bg" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2225%22 fill=%22none%22 stroke=%22%23FFD700%22 stroke-width=%220.5%22/></svg>');"></div>
         <div class="section-content fade-in-on-scroll">
             <h2>Let's Work Together</h2>
             <div class="contact-info">
