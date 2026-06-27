@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V.S. Photographs | Professional Event & Portrait Photography</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --text: #e0e0e0;
+      --accent: #c9a06b;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .hero-content h1 {
+      font-size: 4.5rem;
+      letter-spacing: 8px;
+      margin-bottom: 10px;
+      color: white;
+    }
+    .hero-content p {
+      font-size: 1.4rem;
+      color: var(--accent);
+      letter-spacing: 4px;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10,10,10,0.95);
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .gallery {
+      padding: 80px 5%;
+      columns: 3;
+      column-gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.03);
+      filter: brightness(1.1);
+    }
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      border-top: 1px solid #222;
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.95);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90vh;
+      border-radius: 12px;
+    }
+    @media (max-width: 768px) {
+      .gallery { columns: 2; }
+      .hero-content h1 { font-size: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h2 style="color:var(--accent);">V.S.</h2>
+    <div>
+      <a href="#gallery" style="color:white; margin:0 15px; text-decoration:none;">Work</a>
+      <a href="https://instagram.com/vsfotographs" target="_blank" style="color:white; margin:0 15px; text-decoration:none;">Instagram</a>
+      <a href="#contact" style="color:white; margin:0 15px; text-decoration:none;">Contact</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero-content">
+      <h1>V.S. PHOTOGRAPHS</h1>
+      <p>PROFESSIONAL EVENT & PORTRAIT PHOTOGRAPHY</p>
+    </div>
+  </header>
+
+  <section id="gallery" class="gallery">
+    <!-- Add your 10 best photos here -->
+    <img src="https://your-image-link-1.jpg" alt="Photo 1" onclick="openLightbox(this)">
+    <img src="https://your-image-link-2.jpg" alt="Photo 2" onclick="openLightbox(this)">
+    <!-- Repeat for 8 more images -->
+  </section>
+
+  <footer id="contact">
+    <p style="font-size:1.3rem; margin-bottom:20px;">Let's create something beautiful together.</p>
+    <p><a href="https://instagram.com/vsfotographs" target="_blank" style="color:var(--accent); text-decoration:none;">@vsfotographs</a></p>
+    <p style="margin-top:30px; opacity:0.6;">© 2026 V.S. Photographs</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
