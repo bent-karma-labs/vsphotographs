@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VS Photographs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F8F8;--ink:#1B1F23;--muted:#66707A;--line:#DDE1E4;--accent:#1F5C66;
+--t1:#C9D6D8;--t2:#D9D3CB;--t3:#B9C4CF;--t4:#CFD8C8;--t5:#D8CBCB;--t6:#C7CBD6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15181B;--ink:#ECEFF1;--muted:#98A2AB;--line:#2A3034;--accent:#7FC3CF;
+--t1:#2B3A3D;--t2:#3A3630;--t3:#2C3642;--t4:#33392E;--t5:#3B2F2F;--t6:#2E3140}}
+:root[data-theme="dark"]{--bg:#15181B;--ink:#ECEFF1;--muted:#98A2AB;--line:#2A3034;--accent:#7FC3CF;
+--t1:#2B3A3D;--t2:#3A3630;--t3:#2C3642;--t4:#33392E;--t5:#3B2F2F;--t6:#2E3140}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{padding:72px 0 40px}
+h1{font-size:clamp(3rem,10vw,7rem);font-weight:300;letter-spacing:-.04em;line-height:.95;margin:0}
+h1 b{font-weight:700}
+.intro{display:flex;flex-wrap:wrap;gap:16px 48px;justify-content:space-between;align-items:end;margin-top:32px;border-top:1px solid var(--line);padding-top:20px}
+.intro p{margin:0;max-width:44ch;color:var(--muted);font-size:1.05rem}
+.intro a{color:var(--ink);font-weight:500;text-decoration:none;border-bottom:2px solid var(--accent)}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
+nav button{font:inherit;background:none;border:1px solid var(--line);color:var(--muted);padding:8px 16px;border-radius:999px;cursor:pointer}
+nav button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+nav button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.grid{columns:3 280px;column-gap:16px}
+figure{margin:0 0 16px;break-inside:avoid}
+.ph{border-radius:4px;width:100%}
+figcaption{display:flex;justify-content:space-between;gap:12px;padding:8px 2px 0;font-size:.9rem}
+figcaption span{color:var(--muted)}
+figure[hidden]{display:none}
+.contact{margin-top:72px;border-top:1px solid var(--line);padding:40px 0 64px;display:grid;gap:12px}
+.contact h2{margin:0;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:500;letter-spacing:-.02em}
+.contact p{margin:0;color:var(--muted);max-width:52ch}
+.ig{color:var(--ink);font-weight:500}
+.btn{justify-self:start;margin-top:8px;background:var(--accent);color:var(--bg);padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:500}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#0E1214}}
+:root[data-theme="dark"] .btn{color:#0E1214}
+
+body{position:relative;overflow-x:hidden}
+body::before{content:"";position:absolute;inset:0 0 auto 0;height:760px;z-index:-1;pointer-events:none;
+background:radial-gradient(60% 70% at 88% 0%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%);
+-webkit-mask-image:linear-gradient(#000 30%,transparent);mask-image:linear-gradient(#000 30%,transparent)}
+.hero{position:relative;padding:28px 32px 48px;margin-top:16px}
+.hero>*{position:relative;z-index:1}
+.hero::before,.hero::after{content:"";position:absolute;width:36px;height:36px;border:2px solid var(--ink);z-index:1;opacity:.7}
+.hero::before{top:0;left:0;border-right:0;border-bottom:0}
+.hero::after{bottom:0;right:0;border-left:0;border-top:0}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:72px}
+.mono{color:var(--accent)}
+.links{display:flex;gap:24px}
+.links a{color:var(--ink);text-decoration:none;font-weight:500}
+.links a:hover{color:var(--accent)}
+h1{font-size:clamp(2.75rem,9vw,6.5rem)!important;letter-spacing:-.035em!important}
+.tag{margin:20px 0 0;font-size:clamp(1.1rem,2.4vw,1.4rem);color:var(--ink);max-width:34ch;font-weight:300}
+.exif{position:absolute;right:52px;bottom:14px;font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.aperture{position:absolute!important;right:-140px;top:-90px;width:min(760px,120vw);color:var(--accent);opacity:.3;z-index:0!important;pointer-events:none;animation:open 2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes open{from{transform:rotate(-70deg) scale(.8);opacity:0}to{transform:none;opacity:.3}}
+@media (prefers-reduced-motion:reduce){.aperture{animation:none}}
+@media (max-width:600px){.hero{padding:20px 20px 48px}.exif{right:24px}}
+
+figure{cursor:pointer;position:relative;transition:transform .25s ease}
+figure:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.ph{transition:box-shadow .25s ease}
+@media (hover:hover){figure:hover{transform:scale(1.05);z-index:3}figure:hover .ph{box-shadow:0 20px 44px rgba(0,0,0,.25)}}
+dialog{border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);padding:24px;width:min(760px,92vw);max-height:92vh;overflow:auto}
+dialog[open]{animation:pop .22s ease}
+@keyframes pop{from{transform:scale(.96);opacity:0}to{transform:none;opacity:1}}
+dialog::backdrop{background:rgba(10,14,16,.62);backdrop-filter:blur(4px)}
+dialog h2{margin:0 0 16px;font-size:1.5rem;font-weight:500}
+.x{position:absolute;top:16px;right:16px;font:inherit;background:none;border:1px solid var(--line);color:var(--ink);padding:6px 14px;border-radius:999px;cursor:pointer}
+#big{display:flex;justify-content:center}
+.bigph{border-radius:4px;max-width:100%}
+#bc{margin:12px 0;color:var(--muted)}
+#thumbs{display:flex;flex-wrap:wrap;gap:10px}
+#thumbs button{width:88px;padding:0;background:none;border:2px solid transparent;border-radius:6px;cursor:pointer}
+#thumbs button[aria-pressed="true"]{border-color:var(--accent)}
+.thumb{width:100%;border-radius:4px}
+@media (prefers-reduced-motion:reduce){figure,.ph,dialog[open]{transition:none;animation:none}}
+
+.guts{position:fixed;inset:0;z-index:-2;pointer-events:none;color:var(--ink);opacity:.085}
+.guts svg{width:100%;height:100%;display:block}
+.guts g,.guts rect,.guts polygon,.guts path,.guts circle,.guts line{fill:none;stroke:currentColor;stroke-width:1.5}
+.guts .acc{stroke:var(--accent)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .guts{opacity:.12}}
+:root[data-theme="dark"] .guts{opacity:.12}
+</style>
+</head>
+<body>
+<div class="guts" aria-hidden="true"><svg id="guts" viewBox="0 0 1200 1600" preserveAspectRatio="xMidYMid slice"></svg></div>
+<div class="wrap">
+<header class="hero">
+<svg class="aperture" id="ap" viewBox="-320 -320 640 640" aria-hidden="true"></svg>
+<div class="top">
+<svg class="mono" viewBox="-22 -22 44 44" width="44" height="44" aria-hidden="true"><circle r="20" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M-9-8l9 16 9-16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
+<div class="links"><a href="#work">Work</a><a href="#contact">Book</a></div>
+</div>
+<h1><b>VS</b> Photographs</h1>
+<p class="tag">Portrait, event, landscape and commercial photography in Modesto, California.</p>
+<div class="intro"><p>Browse recent work, then get in touch to book a session.</p><a href="#contact">Book a session</a></div>
+<span class="exif" aria-hidden="true">f/8&nbsp;&nbsp;1/250s&nbsp;&nbsp;ISO 100</span>
+</header>
+<div id="work"></div>
+<nav id="filters" aria-label="Filter photos">
+<button aria-pressed="true" data-f="all">All</button>
+<button aria-pressed="false" data-f="Portraits">Portraits</button>
+<button aria-pressed="false" data-f="Events">Events</button>
+<button aria-pressed="false" data-f="Landscapes">Landscapes</button>
+<button aria-pressed="false" data-f="Commercial">Commercial</button>
+</nav>
+<main class="grid" id="grid"></main>
+<dialog id="dlg" aria-labelledby="dt"><button class="x" id="dx" aria-label="Close folder">Close</button><h2 id="dt"></h2><div id="big"></div><p id="bc"></p><div id="thumbs"></div></dialog>
+<section class="contact" id="contact">
+<h2>Book a session</h2>
+<p>Tell me what you need, where, and when. I'll reply with availability and pricing.</p>
+<a class="btn" href="mailto:vsphotographs@yahoo.com?subject=Photo%20session%20inquiry">Email vsphotographs@yahoo.com</a>
+<p>Or message <a class="ig" href="https://instagram.com/vsfotographs" target="_blank" rel="noopener">@vsfotographs</a> on Instagram.</p>
+</section>
+</div>
+<script>
+var items=[
+["Portraits","Studio portrait",4/5,"t1"],["Landscapes","Valley at dawn",3/2,"t3"],
+["Events","Corporate event",2/3,"t5"],["Commercial","Product on white",1,"t2"],
+["Portraits","Family session",3/2,"t4"],["Events","Evening reception",4/5,"t6"],
+["Landscapes","Foothills",1,"t4"],["Commercial","Storefront",3/2,"t1"],
+["Events","Celebration",3/2,"t3"],["Landscapes","Orchard rows",4/5,"t5"]];
+var grid=document.getElementById("grid"),dlg=document.getElementById("dlg"),big=document.getElementById("big"),bc=document.getElementById("bc"),th=document.getElementById("thumbs");
+function tile(i,cls){var d=document.createElement("div");d.className=cls||"ph";d.style.aspectRatio=String(i[2]);d.style.background="var(--"+i[3]+")";d.setAttribute("role","img");d.setAttribute("aria-label",i[1]+" placeholder");return d}
+function show(i){big.innerHTML="";var t=tile(i,"bigph");t.style.width="min(100%,"+(54*i[2]).toFixed(1)+"vh)";big.appendChild(t);bc.textContent=i[1];
+th.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.n===i[1])})}
+function openFolder(i){document.getElementById("dt").textContent=i[0];th.innerHTML="";
+items.filter(function(x){return x[0]===i[0]}).forEach(function(x){var b=document.createElement("button");b.dataset.n=x[1];b.setAttribute("aria-label",x[1]);
+var t=tile(x,"thumb");t.style.aspectRatio="1";b.appendChild(t);b.addEventListener("click",function(){show(x)});th.appendChild(b)});
+show(i);dlg.showModal()}
+items.forEach(function(i){
+var f=document.createElement("figure");f.dataset.c=i[0];f.tabIndex=0;f.setAttribute("role","button");f.setAttribute("aria-label","Open "+i[0]+" folder, starting with "+i[1]);
+f.appendChild(tile(i));
+var c=document.createElement("figcaption");c.innerHTML="<b>"+i[1]+"</b><span>"+i[0]+"</span>";f.appendChild(c);
+f.addEventListener("click",function(){openFolder(i)});
+f.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();openFolder(i)}});
+grid.appendChild(f)});
+document.getElementById("dx").addEventListener("click",function(){dlg.close()});
+dlg.addEventListener("click",function(e){if(e.target===dlg)dlg.close()});
+document.getElementById("filters").addEventListener("click",function(e){
+var b=e.target.closest("button");if(!b)return;
+this.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});
+grid.querySelectorAll("figure").forEach(function(f){f.hidden=b.dataset.f!=="all"&&f.dataset.c!==b.dataset.f})});
+
+(function(){var ap=document.getElementById("ap"),h="",P=function(r,d){var a=d*Math.PI/180;return(r*Math.cos(a)).toFixed(1)+" "+(r*Math.sin(a)).toFixed(1)};
+[300,250,190,130].forEach(function(r){h+='<circle r="'+r+'" fill="none" stroke="currentColor" stroke-width="1"/>'});
+var oct=[];for(var i=0;i<8;i++){var d=i*45;h+='<path d="M'+P(300,d)+' L'+P(95,d+38)+'" stroke="currentColor" stroke-width="1.2" fill="none"/>';h+='<path d="M'+P(250,d+20)+' L'+P(130,d+55)+'" stroke="currentColor" stroke-width=".8" fill="none"/>';oct.push(P(62,d+22))}
+h+='<polygon points="'+oct.join(" ")+'" fill="currentColor" fill-opacity=".35" stroke="currentColor" stroke-width="1.5"/>';
+ap.innerHTML=h})();
+
+(function(){var g=document.getElementById("guts"),h="";
+function gear(cx,cy,R,n,id,cls){var r=R*.84,pts=[],st=2*Math.PI/n,sp="";
+for(var i=0;i<n;i++){var a=i*st;[[a,r],[a+st*.12,R],[a+st*.38,R],[a+st*.5,r]].forEach(function(q){pts.push((cx+q[1]*Math.cos(q[0])).toFixed(1)+","+(cy+q[1]*Math.sin(q[0])).toFixed(1))})}
+for(var k=0;k<6;k++){var b=k*Math.PI/3;sp+='<line x1="'+cx+'" y1="'+cy+'" x2="'+(cx+r*.7*Math.cos(b)).toFixed(1)+'" y2="'+(cy+r*.7*Math.sin(b)).toFixed(1)+'"/>'}
+return '<g id="'+id+'" class="'+(cls||"")+'"><polygon points="'+pts.join(" ")+'"/><circle cx="'+cx+'" cy="'+cy+'" r="'+(r*.72).toFixed(1)+'"/><circle cx="'+cx+'" cy="'+cy+'" r="'+(r*.16).toFixed(1)+'"/>'+sp+'</g>'}
+var G={ga:[980,260,140],gb:[760,420,80],gc:[180,1150,170],gd:[420,1290,90],ge:[1010,1180,110]};
+h+=gear(980,260,140,24,"ga","acc")+gear(760,420,80,14,"gb")+gear(180,1150,170,30,"gc")+gear(420,1290,90,16,"gd","acc")+gear(1010,1180,110,20,"ge");
+h+='<circle cx="240" cy="470" r="210"/><circle cx="240" cy="470" r="176"/><circle cx="240" cy="470" r="128" class="acc"/>';
+for(var i=0;i<3;i++){h+='<rect x="222" y="246" width="36" height="34" transform="rotate('+(i*120)+' 240 470)"/>'}
+h+='<rect x="560" y="760" width="420" height="300" rx="6"/><line x1="600" y1="1030" x2="940" y2="800"/><polygon points="640,760 900,760 830,640 710,640"/><circle cx="770" cy="700" r="22"/>';
+h+='<rect x="40" y="700" width="360" height="260"/><g id="slats">';
+for(var j=-2;j<22;j++){h+='<line x1="40" y1="'+(700+j*14)+'" x2="400" y2="'+(700+j*14)+'"/>'}
+h+='</g><line x1="0" y1="1450" x2="1200" y2="1450"/><line x1="0" y1="1490" x2="1200" y2="1490"/><line x1="0" y1="1470" x2="1200" y2="1470" stroke-dasharray="2 18" style="stroke-width:6"/>';
+var z="M500 1350";for(var m=1;m<15;m++){z+=" L"+(500+m*22)+" "+(1350+(m%2?18:-18))}
+h+='<path d="'+z+'"/>';
+[[60,60],[1140,60],[60,1540],[1140,1540]].forEach(function(c){h+='<circle cx="'+c[0]+'" cy="'+c[1]+'" r="14"/><circle cx="'+c[0]+'" cy="'+c[1]+'" r="7"/><line x1="'+(c[0]-7)+'" y1="'+c[1]+'" x2="'+(c[0]+7)+'" y2="'+c[1]+'"/>'});
+g.innerHTML=h;
+if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+var f=[["ga",1],["gb",-1.7],["gc",-.6],["gd",1.1],["ge",.8]],sl=document.getElementById("slats"),t=false;
+function upd(){t=false;var y=window.scrollY;f.forEach(function(q){var c=G[q[0]];document.getElementById(q[0]).setAttribute("transform","rotate("+(y*.12*q[1]).toFixed(2)+" "+c[0]+" "+c[1]+")")});
+sl.setAttribute("transform","translate(0 "+((y*.2)%14).toFixed(2)+")")}
+addEventListener("scroll",function(){if(!t){t=true;requestAnimationFrame(upd)}},{passive:true});upd()})();
+</script>
+</body>
+</html>
