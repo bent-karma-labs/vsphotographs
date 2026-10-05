@@ -124,11 +124,9 @@ dialog h2{margin:0 0 16px;font-size:1.5rem;font-weight:500}
 </div>
 <script>
 var items=[
-["Portraits","Studio portrait",4/5,"t1"],["Everyday","Valley at dawn",3/2,"t3"],
-["Events","Corporate event",2/3,"t5"],
+["Portraits","Studio portrait",4/5,"t1"],["Events","Corporate event",2/3,"t5"],
 ["Portraits","Family session",3/2,"t4"],
-["Everyday","Foothills",1,"t4"],
-["Events","Celebration",3/2,"t3"],["Everyday","Orchard rows",4/5,"t5"]];
+["Events","Celebration",3/2,"t3"]];
 var grid=document.getElementById("grid"),dlg=document.getElementById("dlg"),big=document.getElementById("big"),bc=document.getElementById("bc"),th=document.getElementById("thumbs");
 function tile(i,cls){var d=document.createElement("div");d.className=cls||"ph";d.style.aspectRatio=String(i[2]);d.style.background="var(--"+i[3]+")";d.setAttribute("role","img");d.setAttribute("aria-label",i[1]+" placeholder");return d}
 function show(i){big.innerHTML="";var t=tile(i,"bigph");t.style.width="min(100%,"+(54*i[2]).toFixed(1)+"vh)";big.appendChild(t);bc.textContent=i[1];
