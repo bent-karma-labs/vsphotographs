@@ -102,7 +102,7 @@ dialog h2{margin:0 0 16px;font-size:1.5rem;font-weight:500}
 <div class="links"><a href="#work">Work</a><a href="#contact">Book</a><a href="/clients/">Client Gallery</a></div>
 </div>
 <h1><b>VS</b> Photographs</h1>
-<p class="tag">Portrait, event, landscape and commercial photography in Modesto, California.</p>
+<p class="tag">Portrait, event, everyday and commercial photography in Modesto, California.</p>
 <div class="intro"><p>Browse recent work, then get in touch to book a session.</p><a href="#contact">Book a session</a></div>
 <span class="exif" aria-hidden="true">f/8&nbsp;&nbsp;1/250s&nbsp;&nbsp;ISO 100</span>
 </header>
@@ -111,8 +111,7 @@ dialog h2{margin:0 0 16px;font-size:1.5rem;font-weight:500}
 <button aria-pressed="true" data-f="all">All</button>
 <button aria-pressed="false" data-f="Portraits">Portraits</button>
 <button aria-pressed="false" data-f="Events">Events</button>
-<button aria-pressed="false" data-f="Landscapes">Landscapes</button>
-<button aria-pressed="false" data-f="Commercial">Commercial</button>
+<button aria-pressed="false" data-f="Everyday">Everyday</button>
 </nav>
 <main class="grid" id="grid"></main>
 <dialog id="about" aria-labelledby="aboutTitle"><button class="x" id="aboutClose" aria-label="Close about">Close</button><h2 id="aboutTitle">Vicente Sandoval</h2><p><strong>10+ years as a freelance photographer</strong>, based in Modesto, California.</p><p>I’m the photographer behind VS Photographs, specializing in portraits, events, landscapes, and commercial photography. I believe great photography is about more than simply taking a picture—it’s about capturing the people, places, and moments that are worth remembering.</p><p>My approach is simple: keep the experience comfortable, pay attention to the details, and create photographs that feel genuine and intentional. Whether it’s a family session, a special event, a favorite place, or images for your business, I want the finished photographs to feel like something you’ll be proud to keep.</p><p>After more than a decade of freelance work, I’m still excited by every new subject, location, and story that comes in front of my camera.</p><a class="btn" href="#contact" id="aboutBook">Book a session</a></dialog><dialog id="dlg" aria-labelledby="dt"><button class="x" id="dx" aria-label="Close folder">Close</button><h2 id="dt"></h2><div id="big"></div><p id="bc"></p><div id="thumbs"></div></dialog>
@@ -125,11 +124,11 @@ dialog h2{margin:0 0 16px;font-size:1.5rem;font-weight:500}
 </div>
 <script>
 var items=[
-["Portraits","Studio portrait",4/5,"t1"],["Landscapes","Valley at dawn",3/2,"t3"],
-["Events","Corporate event",2/3,"t5"],["Commercial","Product on white",1,"t2"],
-["Portraits","Family session",3/2,"t4"],["Events","Evening reception",4/5,"t6"],
-["Landscapes","Foothills",1,"t4"],["Commercial","Storefront",3/2,"t1"],
-["Events","Celebration",3/2,"t3"],["Landscapes","Orchard rows",4/5,"t5"]];
+["Portraits","Studio portrait",4/5,"t1"],["Everyday","Valley at dawn",3/2,"t3"],
+["Events","Corporate event",2/3,"t5"],
+["Portraits","Family session",3/2,"t4"],
+["Everyday","Foothills",1,"t4"],
+["Events","Celebration",3/2,"t3"],["Everyday","Orchard rows",4/5,"t5"]];
 var grid=document.getElementById("grid"),dlg=document.getElementById("dlg"),big=document.getElementById("big"),bc=document.getElementById("bc"),th=document.getElementById("thumbs");
 function tile(i,cls){var d=document.createElement("div");d.className=cls||"ph";d.style.aspectRatio=String(i[2]);d.style.background="var(--"+i[3]+")";d.setAttribute("role","img");d.setAttribute("aria-label",i[1]+" placeholder");return d}
 function show(i){big.innerHTML="";var t=tile(i,"bigph");t.style.width="min(100%,"+(54*i[2]).toFixed(1)+"vh)";big.appendChild(t);bc.textContent=i[1];
