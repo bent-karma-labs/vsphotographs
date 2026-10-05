@@ -53,7 +53,7 @@ background:radial-gradient(60% 70% at 88% 0%,color-mix(in srgb,var(--accent) 22%
 .hero::before{top:0;left:0;border-right:0;border-bottom:0}
 .hero::after{bottom:0;right:0;border-left:0;border-top:0}
 .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:72px}
-.mono{color:var(--accent);display:block;width:44px;height:44px;cursor:pointer}.mono:hover{color:var(--ink)}
+.mono{color:var(--accent);display:flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;margin:0;border:0;background:transparent;appearance:none;-webkit-appearance:none;cursor:pointer}.mono svg{display:block;width:44px;height:44px}.mono:hover{color:var(--ink)}.mono:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:50%}
 .links{display:flex;gap:24px}
 .links a{color:var(--ink);text-decoration:none;font-weight:500}
 .links a:hover{color:var(--accent)}
@@ -98,7 +98,7 @@ dialog h2{margin:0 0 16px;font-size:1.5rem;font-weight:500}
 <header class="hero">
 <svg class="aperture" id="ap" viewBox="-320 -320 640 640" aria-hidden="true"></svg>
 <div class="top">
-<button class="mono" id="aboutOpen" aria-label="About VS Photographs"><svg viewBox="-22 -22 44 44" width="44" height="44" aria-hidden="true"><circle r="20" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M-9-8l9 16 9-16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg></button>
+<button class="mono" id="aboutOpen" aria-label="About VS Photographs"><svg viewBox="-22 -22 44 44" width="44" height="44" aria-hidden="true"><circle r="20" fill="none" stroke="currentColor" stroke-width="2.8"/><path d="M-9-8l9 16 9-16" fill="none" stroke="currentColor" stroke-width="3.8" stroke-linejoin="round"/></svg></button>
 <div class="links"><a href="#work">Work</a><a href="#contact">Book</a><a href="/clients/">Client Gallery</a></div>
 </div>
 <h1><b>VS</b> Photographs</h1>
