@@ -42,7 +42,6 @@ figure[hidden]{display:none}
 .btn{justify-self:start;margin-top:8px;background:var(--accent);color:var(--bg);padding:12px 24px;border-radius:4px;text-decoration:none;font-weight:500}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{color:#0E1214}}
 :root[data-theme="dark"] .btn{color:#0E1214}
-
 body{position:relative;overflow-x:hidden}
 body::before{content:"";position:absolute;inset:0 0 auto 0;height:760px;z-index:-1;pointer-events:none;
 background:radial-gradient(60% 70% at 88% 0%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%);
@@ -64,7 +63,6 @@ h1{font-size:clamp(2.75rem,9vw,6.5rem)!important;letter-spacing:-.035em!importan
 @keyframes open{from{transform:rotate(-70deg) scale(.8);opacity:0}to{transform:none;opacity:.3}}
 @media (prefers-reduced-motion:reduce){.aperture{animation:none}}
 @media (max-width:600px){.hero{padding:20px 20px 48px}.exif{right:24px}}
-
 figure{cursor:pointer;position:relative;transition:transform .25s ease}
 figure:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 .ph{transition:box-shadow .25s ease}
@@ -83,7 +81,6 @@ dialog h2{margin:0 0 16px;font-size:1.5rem;font-weight:500}
 #thumbs button[aria-pressed="true"]{border-color:var(--accent)}
 .thumb{width:100%;border-radius:4px}
 @media (prefers-reduced-motion:reduce){figure,.ph,dialog[open]{transition:none;animation:none}}
-
 .guts{position:fixed;inset:0;z-index:-2;pointer-events:none;color:var(--ink);opacity:.085}
 .guts svg{width:100%;height:100%;display:block}
 .guts g,.guts rect,.guts polygon,.guts path,.guts circle,.guts line{fill:none;stroke:currentColor;stroke-width:1.5}
@@ -102,7 +99,7 @@ dialog h2{margin:0 0 16px;font-size:1.5rem;font-weight:500}
 <div class="links"><a href="#work">Work</a><a href="#contact">Book</a><a href="/clients/">Client Gallery</a></div>
 </div>
 <h1><b>VS</b> Photographs</h1>
-<p class="tag">Portrait, event, and everyday photography in Modesto, California.</p>
+<p class="tag">Portrait, event, and everyday photography in Modesto, California, and surrounding areas.</p>
 <div class="intro"><p>Browse recent work, then get in touch to book a session.</p><a href="#contact">Book a session</a></div>
 <span class="exif" aria-hidden="true">f/8&nbsp;&nbsp;1/250s&nbsp;&nbsp;ISO 100</span>
 </header>
@@ -148,13 +145,11 @@ document.getElementById("filters").addEventListener("click",function(e){
 var b=e.target.closest("button");if(!b)return;
 this.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});
 grid.querySelectorAll("figure").forEach(function(f){f.hidden=b.dataset.f!=="all"&&f.dataset.c!==b.dataset.f})});
-
 (function(){var ap=document.getElementById("ap"),h="",P=function(r,d){var a=d*Math.PI/180;return(r*Math.cos(a)).toFixed(1)+" "+(r*Math.sin(a)).toFixed(1)};
 [300,250,190,130].forEach(function(r){h+='<circle r="'+r+'" fill="none" stroke="currentColor" stroke-width="1"/>'});
 var oct=[];for(var i=0;i<8;i++){var d=i*45;h+='<path d="M'+P(300,d)+' L'+P(95,d+38)+'" stroke="currentColor" stroke-width="1.2" fill="none"/>';h+='<path d="M'+P(250,d+20)+' L'+P(130,d+55)+'" stroke="currentColor" stroke-width=".8" fill="none"/>';oct.push(P(62,d+22))}
 h+='<polygon points="'+oct.join(" ")+'" fill="currentColor" fill-opacity=".35" stroke="currentColor" stroke-width="1.5"/>';
 ap.innerHTML=h})();
-
 (function(){var g=document.getElementById("guts"),h="";
 function gear(cx,cy,R,n,id,cls){var r=R*.84,pts=[],st=2*Math.PI/n,sp="";
 for(var i=0;i<n;i++){var a=i*st;[[a,r],[a+st*.12,R],[a+st*.38,R],[a+st*.5,r]].forEach(function(q){pts.push((cx+q[1]*Math.cos(q[0])).toFixed(1)+","+(cy+q[1]*Math.sin(q[0])).toFixed(1))})}
@@ -173,7 +168,7 @@ h+='<path d="'+z+'"/>';
 [[60,60],[1140,60],[60,1540],[1140,1540]].forEach(function(c){h+='<circle cx="'+c[0]+'" cy="'+c[1]+'" r="14"/><circle cx="'+c[0]+'" cy="'+c[1]+'" r="7"/><line x1="'+(c[0]-7)+'" y1="'+c[1]+'" x2="'+(c[0]+7)+'" y2="'+c[1]+'"/>'});
 g.innerHTML=h;
 if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;
-var f=[["ga",1],["gb",-1.7],["gc",-.6],["gd",1.1],["ge",.8]],sl=document.getElementById("slats"),t=false;
+var f=[["ga",1],["gb",-1.7],["gc",-0.6],["gd",1.1],["ge",0.8]],sl=document.getElementById("slats"),t=false;
 function upd(){t=false;var y=window.scrollY;f.forEach(function(q){var c=G[q[0]];document.getElementById(q[0]).setAttribute("transform","rotate("+(y*.12*q[1]).toFixed(2)+" "+c[0]+" "+c[1]+")")});
 sl.setAttribute("transform","translate(0 "+((y*.2)%14).toFixed(2)+")")}
 addEventListener("scroll",function(){if(!t){t=true;requestAnimationFrame(upd)}},{passive:true});upd()})();
