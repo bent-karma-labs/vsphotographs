@@ -179,5 +179,63 @@ function upd(){t=false;var y=window.scrollY;f.forEach(function(q){var c=G[q[0]];
 sl.setAttribute("transform","translate(0 "+((y*.2)%14).toFixed(2)+")")}
 addEventListener("scroll",function(){if(!t){t=true;requestAnimationFrame(upd)}},{passive:true});upd()})();
 </script>
+  
+<style>
+#backToTop {
+  position: fixed;
+  right: 22px;
+  bottom: 24px;
+  z-index: 100;
+  display: none;
+  padding: 14px 18px;
+  border: 1px solid #7FC3CF;
+  border-radius: 8px;
+  background: #15181B;
+  color: #7FC3CF;
+  font: 500 15px "Hanken Grotesk", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+}
+#backToTop:hover {
+  background: #7FC3CF;
+  color: #15181B;
+}
+@media (max-width: 600px) {
+  #backToTop {
+    right: 12px;
+    bottom: 16px;
+    padding: 12px 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+</style>
+
+<button id="backToTop" aria-label="Back to top">
+  ↑ Back to top
+</button>
+
+<script>
+(function () {
+  const btn = document.getElementById("backToTop");
+
+  function updateButton() {
+    btn.style.display = window.scrollY > 300 ? "block" : "none";
+  }
+
+  window.addEventListener("scroll", updateButton, { passive: true });
+
+  btn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+  updateButton();
+})();
+</script>
+
 </body>
 </html>
